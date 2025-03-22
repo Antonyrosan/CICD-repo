@@ -9,15 +9,15 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                echo "passed"
-                //git branch: 'main', url: 'https://github.com/Antonyrosan/CICD-repo.git'
+                sh 'echo "passed"'
+                git branch: 'main', url: 'https://github.com/Antonyrosan/CICD-repo.git'
             }
         }
         
         stage('Build Docker Image') {
             steps {
                 sh "ls -ltr"
-                sh "cd pipline && docker build -t $IMAGE_NAME ."
+                sh "cd pipeline && docker build -t my-image-name ."
             }
         }
         
