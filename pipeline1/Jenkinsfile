@@ -1,0 +1,39 @@
+pipeline {
+    agent any
+    
+    environment {
+        IMAGE_NAME = "antonyrosan/pipeline1_image:${BUILD_NUMBER}"
+        CONTAINER_NAME = "antonyrosan_container"
+    }
+    
+    stages {
+        stage('Clone Repository') {
+            steps {
+                sh 'echo "passed"'
+                git branch: 'main', url: 'https://github.com/Antonyrosan/CICD-repo.git'
+            }
+        }
+        
+        stage('Build Docker Image') {
+            steps {
+                sh "ls -ltr"
+                sh "cd pipeline1 && docker build -t $IMAGE_NAME ."
+            }
+        }
+        
+        stage('Stop and Remove Existing Container') {
+            steps {
+                script {
+                    sh "docker ps -q --filter 'name=$CONTAINER_NAME' | xargs -r docker stop"
+                    sh "docker ps -aq --filter 'name=$CONTAINER_NAME' | xargs -r docker rm"
+                }
+            }
+        }
+        
+        stage('Run Docker Container') {
+            steps {
+                sh "docker run -d --name $CONTAINER_NAME -p 80:80 $IMAGE_NAME"
+            }
+        }
+    }
+}
