@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact - <%= data.name %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <p>Let’s collaborate and automate together!</p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Reach Out</h2>
+      <div class="contact-links">
+        <p>Email: <a href="mailto:<%= data.contact.email %>"><%= data.contact.email %></a></p>
+        <p>GitHub: <a href="<%= data.contact.github %>" target="_blank">rosan-a</a></p>
+        <p>LinkedIn: <a href="<%= data.contact.linkedin %>" target="_blank">rosan-a</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <%= new Date().getFullYear() %> <%= data.name %>
+  </footer>
+</body>
+</html>

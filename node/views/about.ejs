@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About - <%= data.name %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+    <p><%= data.tagline %></p>
+  </header>
+
+  <nav>
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/projects">Projects</a>
+    <a href="/contact">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Who I Am</h2>
+      <p>Hello, I’m <strong><%= data.name %></strong>, an aspiring DevOps Engineer who enjoys building scalable, automated, and secure infrastructure. I specialize in deploying infrastructure with Terraform, automating CI/CD pipelines, and migrating legacy systems to cloud-native architectures.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills">
+        <% data.skills.forEach(skill => { %>
+          <li><%= skill %></li>
+        <% }) %>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <%= new Date().getFullYear() %> <%= data.name %>
+  </footer>
+</body>
+</html>

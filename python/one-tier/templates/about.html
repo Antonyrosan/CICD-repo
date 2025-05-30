@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About - {{ data.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>About Me</h1>
+    <p>{{ data.tagline }}</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('projects') }}">Projects</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Who I Am</h2>
+      <p>Hello, I’m <strong>{{ data.name }}</strong>, an aspiring DevOps Engineer who enjoys building scalable, automated, and secure infrastructure. I specialize in deploying infrastructure with Terraform, automating CI/CD pipelines, and migrating legacy systems to cloud-native architectures.</p>
+    </section>
+
+    <section>
+      <h2>Skills</h2>
+      <ul class="skills">
+        {% for skill in data.skills %}
+          <li>{{ skill }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; {{ current_year }} {{ data.name }}
+  </footer>
+</body>
+</html>

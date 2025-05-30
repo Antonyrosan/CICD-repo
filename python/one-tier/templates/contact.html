@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact - {{ data.name }}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Contact Me</h1>
+    <p>Let’s collaborate and automate together!</p>
+  </header>
+
+  <nav>
+    <a href="{{ url_for('index') }}">Home</a>
+    <a href="{{ url_for('about') }}">About</a>
+    <a href="{{ url_for('projects') }}">Projects</a>
+    <a href="{{ url_for('contact') }}">Contact</a>
+  </nav>
+
+  <main>
+    <section>
+      <h2>Reach Out</h2>
+      <div class="contact-links">
+        <p>Email: <a href="mailto:{{ data.contact.email }}">{{ data.contact.email }}</a></p>
+        <p>GitHub: <a href="{{ data.contact.github }}" target="_blank">rosan-a</a></p>
+        <p>LinkedIn: <a href="{{ data.contact.linkedin }}" target="_blank">rosan-a</a></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; {{ current_year }} {{ data.name }}
+  </footer>
+</body>
+</html>

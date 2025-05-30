@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosan A | DevOps Engineer</title>
+  <style>
+    :root {
+      --primary: #015BA1;
+      --accent: #FB8F02;
+      --bg: #f4f4f9;
+      --text: #1a1a1a;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    header {
+      background: linear-gradient(to right, var(--primary), var(--accent));
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .skills, .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+
+    .project-img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      height: 150px;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Rosan A</h1>
+    <p>Aspiring DevOps Engineer | Automating Cloud Infrastructure & CI/CD Pipelines</p>
+  </header>
+
+  <section>
+    <h2>About Me</h2>
+    <p>I'm a DevOps enthusiast with a passion for building scalable cloud infrastructure, automating deployments, and optimizing development pipelines. I specialize in AWS, Docker, CI/CD, and Infrastructure as Code using Terraform.</p>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills">
+      <div class="card"><h3>AWS</h3><p>EC2, S3, RDS, VPC, IAM</p></div>
+      <div class="card"><h3>CI/CD</h3><p>GitHub Actions, Jenkins, CodePipeline</p></div>
+      <div class="card"><h3>Containers</h3><p>Docker, ECR, ECS</p></div>
+      <div class="card"><h3>IAC</h3><p>Terraform, CloudFormation</p></div>
+      <div class="card"><h3>Monitoring</h3><p>CloudWatch, Grafana</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <img src="https://via.placeholder.com/400x150" alt="DB Migration" class="project-img">
+        <h3>Database Migration to AWS</h3>
+        <p>On-premise to AWS migration using Percona XtraBackup, S3 and RDS. Reduced cost and increased disaster recovery efficiency.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x150" alt="3-tier" class="project-img">
+        <h3>3-Tier Architecture Deployment</h3>
+        <p>Deployed a secure 3-tier web app with EC2 instances, RDS MySQL, ALB, and auto-scaling groups on AWS.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x150" alt="CI/CD" class="project-img">
+        <h3>End-to-End CI/CD Pipeline</h3>
+        <p>Implemented GitHub Actions CI/CD for Node.js app to automate build, test, and deploy stages to AWS EC2.</p>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/400x150" alt="Terraform Network" class="project-img">
+        <h3>Network Provisioning using Terraform</h3>
+        <p>Automated VPC, subnets, routing tables, and security groups setup for a complete isolated cloud network.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>📧 Email: rosan@example.com</p>
+    <p>🔗 GitHub: <a href="https://github.com/rosan-a" target="_blank">github.com/rosan-a</a></p>
+    <p>🔗 LinkedIn: <a href="https://linkedin.com/in/rosan-a" target="_blank">linkedin.com/in/rosan-a</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rosan A. All rights reserved.</p>
+  </footer>
+</body>
+</html>
